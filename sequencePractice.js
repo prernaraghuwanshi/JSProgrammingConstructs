@@ -26,3 +26,15 @@
     }
     console.log("Sum: " + sum + " Average: " + sum / 5);
 }
+
+// 5. Unit Conversion
+{
+    let inchToFt = 1 / 12;
+    console.log("42 inch = " + inchToFt * 42 + " ft");
+    let feetToMeter = 0.3048;
+    let length = 60;
+    let breadth = 40;
+    let area = length * feetToMeter * breadth * feetToMeter;
+    console.log("Area in meters square: " + area);
+    console.log("Area of 25 such plots: " + 25 * area);
+}
