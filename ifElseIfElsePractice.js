@@ -57,6 +57,8 @@
     let numInWords;
     if (number == 1) {
         numInWords = 'Unit';
+    } else if (number == 10) {
+        numInWords = 'Ten';
     } else if (number == 100) {
         numInWords = 'Hundred'
     } else if (number == 1000) {
@@ -67,4 +69,33 @@
         console.log("ERROR! Enter correct number");
     }
     console.log("Number in Word: " + numInWords);
+}
+
+// 4. Minimum and maximum from operations
+{
+    const prompt = require('prompt-sync')();
+    let number1 = prompt("Enter Number 1: ");
+    let number2 = prompt('Enter Number 2: ');
+    let number3 = prompt('Enter Number 3: ');
+    let operation1 = number1 + number2 * number3;
+    let operation2 = number1 % number2 + number3;
+    let operation3 = number3 + number1 / number2;
+    let operation4 = number1 * number2 + number3;
+    let minimum = operation1;
+    let maximum = operation1;
+    if (operation2 < minimum) {
+        minimum = operation2;
+    } else if (operation3 < minimum) {
+        minimum = operation3;
+    } else {
+        minimum = operation4;
+    }
+    if (operation2 > maximum) {
+        maximum = operation2;
+    } else if (operation3 > maximum) {
+        maximum = operation3;
+    } else {
+        maximum = operation4;
+    }
+    console.log("Maximum = " + maximum + " Minimum = " + minimum);
 }
