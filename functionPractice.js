@@ -2,7 +2,7 @@
 {
     const prompt = require('prompt-sync')();
     let unit = prompt('Unit: ');
-    
+
     function checkCorrectInput(temperature) {
         if (unit == 'degreeF') {
             if (temperature < 32 || temperature > 212) {
@@ -66,5 +66,39 @@
         console.log("Palindromes!");
     } else {
         console.log("Not Palindromes!");
+    }
+}
+
+// 3. Check for prime and check for palindrome also prime
+{
+    const prompt = require('prompt-sync')();
+
+    function isPrimeNumber(number) {
+        for (let index = 2; index < number; index++) {
+            if (number % index == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function getPalindrome(number) {
+        let palindrome = 0;
+        while (number > 0) {
+            palindrome = palindrome * 10 + (number % 10);
+            number = Math.floor(number / 10);
+        }
+        return palindrome;
+    }
+
+    let number = parseInt(prompt('Enter a number: '));
+    if (isPrimeNumber(number)) {
+        if (isPrimeNumber(getPalindrome(number))) {
+            console.log('Palindome of prime number is also prime');
+        } else {
+            console.log('Palindrome of prime number is not prime');
+        }
+    } else {
+        console.log('Number is NOT prime');
     }
 }
