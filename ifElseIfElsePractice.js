@@ -48,5 +48,23 @@
     } else {
         console.log("ERROR! Enter correct number");
     }
+}
 
+// 3. Unit, tens, hundreds etc..
+{
+    const prompt = require('prompt-sync')();
+    let number = parseInt(prompt("Enter a number in tenth's power : "));
+    let numInWords;
+    if (number == 1) {
+        numInWords = 'Unit';
+    } else if (number == 100) {
+        numInWords = 'Hundred'
+    } else if (number == 1000) {
+        numInWords = 'Thousand'
+    } else if (number == 10000) {
+        numInWords = 'Ten Thousand'
+    } else {
+        console.log("ERROR! Enter correct number");
+    }
+    console.log("Number in Word: " + numInWords);
 }
