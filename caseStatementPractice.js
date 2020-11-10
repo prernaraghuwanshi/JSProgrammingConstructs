@@ -99,3 +99,30 @@
     }
     console.log(numInWords);
 }
+
+// 4.Unit Conversions
+{
+    const prompt = require('prompt-sync')();
+    let feetToInch = 12;
+    let feetToMeter = 0.3048;
+    let inchToFeet = 1 / 12;
+    let meterToFeet = 3.28084;
+
+    let value = parseFloat(prompt('Enter the value: '));
+    let unit = prompt('Enter the unit: ');
+    switch (unit) {
+        case 'Inch':
+            console.log("Value in Feet: " + value * inchToFeet);
+            break;
+        case 'Feet':
+            console.log("Value in Inches: " + value * feetToInch);
+            console.log("Value in Meters: " + value * feetToMeter);
+            break;
+        case 'Meter':
+            console.log("Value in Feet: " + value * meterToFeet);
+            break;
+        default:
+            console.log("Enter Proper Unit!");
+            break;
+    }
+}
