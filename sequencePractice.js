@@ -17,3 +17,12 @@
     let sum = diceNum1 + diceNum2;
     console.log("First Number: " + diceNum1 + " Second Number: " + diceNum2 + " Sum: " + sum);
 }
+
+// 4. Sum and Average of 5 Random 2 digit numbers
+{
+    let sum = 0;
+    for (let index = 0; index < 5; index++) {
+        sum += Math.floor(Math.random() * 90) + 10;
+    }
+    console.log("Sum: " + sum + " Average: " + sum / 5);
+}
