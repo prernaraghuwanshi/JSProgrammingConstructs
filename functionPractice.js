@@ -2,16 +2,22 @@
 {
     const prompt = require('prompt-sync')();
     let unit = prompt('Unit: ');
-    let value = parseFloat(prompt('Enter the temperature: '));
-    if (unit == 'degreeF') {
-        if (value < 32 || value > 212) {
-            console.log('INVALID');
-            return;
-        }
-    } else if (unit == 'degreeC') {
-        if (value < 0 || value > 100) {
-            console.log('INVALID');
-            return;
+    
+    function checkCorrectInput(temperature) {
+        if (unit == 'degreeF') {
+            if (temperature < 32 || temperature > 212) {
+                console.log('INVALID');
+                return false;
+            } else {
+                return true;
+            }
+        } else if (unit == 'degreeC') {
+            if (temperature < 0 || temperature > 100) {
+                console.log('INVALID');
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 
@@ -25,12 +31,40 @@
 
     switch (unit) {
         case 'degreeF':
-            console.log("Temprature in celcius is " + fahrenheitToCelcius(value));
+            let valueF = parseFloat(prompt('Enter the temperature: '));
+            if (checkCorrectInput(valueF)) {
+                console.log("Temprature in celcius is " + fahrenheitToCelcius(valueF));
+            }
             break;
         case 'degreeC':
-            console.log("Temperature in Fahrenheit is " + celciusToFahrenheit(value));
+            let valueC = parseFloat(prompt('Enter the temperature: '));
+            if (checkCorrectInput(valueC)) {
+                console.log("Temperature in Fahrenheit is " + celciusToFahrenheit(valueC));
+            }
             break;
         default:
             console.log('Invalid unit');
+    }
+}
+
+// 2. Palindromes check
+{
+    const prompt = require('prompt-sync')();
+    let number1 = parseInt(prompt("Enter a number: "));
+    let number2 = parseInt(prompt("Enter a number: "));
+
+    function checkPalindrome(number1, number2) {
+        let palindrome = 0;
+        while (number1 > 0) {
+            palindrome = palindrome * 10 + (number1 % 10);
+            number1 = Math.floor(number1 / 10);
+        }
+        return palindrome == number2;
+    }
+
+    if (checkPalindrome(number1, number2)) {
+        console.log("Palindromes!");
+    } else {
+        console.log("Not Palindromes!");
     }
 }
