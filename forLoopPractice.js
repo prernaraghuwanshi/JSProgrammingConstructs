@@ -56,3 +56,14 @@
         }
     }
 }
+
+// 5. Factorial
+{
+    const prompt = require('prompt-sync')();
+    let number = prompt('Enter number ');
+    let factorial = 1;
+    for (index = 2; index <= number; index++) {
+        factorial = factorial * index;
+    }
+    console.log("Factorial: " + factorial);
+}
